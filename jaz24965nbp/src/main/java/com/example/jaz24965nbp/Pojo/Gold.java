@@ -1,5 +1,9 @@
 package com.example.jaz24965nbp.Pojo;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Gold {
     private String data;
 

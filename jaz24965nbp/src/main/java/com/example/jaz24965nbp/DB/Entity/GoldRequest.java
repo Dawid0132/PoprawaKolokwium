@@ -1,4 +1,4 @@
-package com.example.jaz24965nbp.DB;
+package com.example.jaz24965nbp.DB.Entity;
 
 
 import com.example.jaz24965nbp.Category.Category;
@@ -29,8 +29,7 @@ public class GoldRequest {
 
     private LocalDateTime addedAt;
 
-    public GoldRequest(Long id, Category category, String startDate, String endDate, double average, LocalDateTime addedAt) {
-        this.id = id;
+    public GoldRequest(Category category, String startDate, String endDate, double average, LocalDateTime addedAt) {
         this.category = category;
         this.startDate = startDate;
         this.endDate = endDate;
