@@ -25,7 +25,7 @@ public class GoldService {
 
 
     public Mono<Double> averageGold(String startDate, String endDate) {
-        return webClient.get().uri("http://api.nbp.pl/api/cenyzlota/" + startDate + "/" + endDate).retrieve().bodyToMono(GoldResponse.class).flatMap(response -> {
+        return webClient.get().uri("http://api.nbp.pl/api/cenyzlota/" + startDate + "/" + endDate+"/?format=json").retrieve().bodyToMono(GoldResponse.class).flatMap(response -> {
             double sum = response.getGoldList().stream().mapToDouble(Gold::getCena).sum();
             return Mono.just(sum / response.getGoldList().size());
         });
