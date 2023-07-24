@@ -20,7 +20,7 @@ public class GoldRestController {
     }
 
     @GetMapping(path = "/getaverage")
-    ResponseEntity<Mono<Double>> getAverageGold(
+    ResponseEntity<Double> getAverageGold(
             @RequestParam(required = true) String startDate,
             @RequestParam(required = true) String endDate) {
         return ResponseEntity.ok(goldService.averageGold(startDate, endDate));
